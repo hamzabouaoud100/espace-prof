@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#2459d3" />
+    <title>فضاء الأستاذ | Espace Prof</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="workspace.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/docx@9.5.1/dist/index.iife.js"
+    ></script>
+    <script defer src="semesters.js"></script>
+    <script defer src="simple.js"></script>
+    <script defer src="support.js"></script>
+    <script defer src="schedule.js"></script>
+    <script defer src="state.js"></script>
+    <script defer src="ui.js"></script>
+    <script defer src="confirmations.js"></script>
+    <script defer src="files.js"></script>
+    <script defer src="attendance-report.js"></script>
+    <script defer src="filters.js"></script>
+    <script defer src="workspace.js"></script>
+    <script defer src="remarks.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body class="workspace">
+    <a class="skip-link" href="#content"
+      >انتقل إلى المحتوى / Aller au contenu</a
+    >
+    <aside id="workspace-sidebar">
+      <div class="sidebar-header">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">⚛</span
+          ><span>فضاء الأستاذ<small>ESPACE PROF</small></span>
+        </div>
+        <div class="sidebar-tools">
+          <button
+            id="sidebar-toggle"
+            class="sidebar-toggle"
+            type="button"
+            aria-controls="workspace-sidebar"
+            aria-expanded="true"
+            aria-label="إغلاق القائمة الجانبية"
+            onclick="toggleSidebar()"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="subject">
+        <span class="subject-dot"></span
+        ><span id="shell-subject">الفيزياء والكيمياء</span
+        ><small>PHYSIQUE & CHIMIE</small>
+      </div>
+      <div class="nav-caption" id="shell-nav-caption">التدبير التربوي</div>
+      <nav id="nav" aria-label="التنقل / Navigation"></nav>
+      <div class="aside-bottom">
+        <div class="teacher-profile">
+          <span class="teacher-avatar">BM</span>
+          <div>
+            <strong>بوعود محمد</strong
+            ><small id="shell-role">أستاذ الفيزياء والكيمياء</small>
+          </div>
+        </div>
+        <span id="shell-year">السنة الدراسية</span><b>2026 / 2027</b>
+        <hr />
+        <span class="dot"></span>
+        <span id="shell-personal">مساحتك التعليمية</span>
+      </div>
+    </aside>
+    <main>
+      <header>
+        <div class="breadcrumb">
+          <span id="shell-workspace">مساحة العمل</span
+          ><span class="breadcrumb-divider">/</span
+          ><b id="crumb">لوحة القيادة</b>
+        </div>
+        <div class="header-actions">
+          <button id="lang" class="quiet">Français</button
+          ><span class="header-divider"></span
+          ><span class="avatar" aria-hidden="true">م ب</span
+          ><button class="quiet" id="shell-logout" onclick="logout()">
+            تسجيل الخروج
+          </button>
+        </div>
+      </header>
+      <div id="content" tabindex="-1"></div>
+      <footer>
+        <span id="shell-footer">فضاء الأستاذ — الفيزياء والكيمياء</span
+        ><span id="shell-storage">البيانات محفوظة على هذا المتصفح</span>
+      </footer>
+    </main>
+    <input
+      id="file"
+      type="file"
+      accept=".xlsx"
+      aria-label="Importer Excel"
+      hidden
+    />
+    <dialog id="modal"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

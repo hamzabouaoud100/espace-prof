@@ -1,0 +1,18 @@
+{
+  "name": "espace-prof",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Arabic and French workspace for physics and chemistry teachers",
+  "scripts": {
+    "start": "node server.cjs",
+    "check": "node scripts/check.cjs",
+    "test": "node tests/semester-check.cjs && node tests/confirmation-check.cjs && node tests/app-check.cjs && node tests/remarks-check.cjs && node tests/schedule-check.cjs",
+    "format": "prettier --write \"dist/*.{html,css,js}\" \"tests/*.cjs\" \"scripts/*.cjs\" server.cjs package.json",
+    "test:auth": "node tests/auth-check.cjs",
+    "test:word": "node tests/attendance-export-check.cjs"
+  },
+  "devDependencies": {
+    "postcss": "^8.5.6",
+    "prettier": "3.6.2"
+  }
+}

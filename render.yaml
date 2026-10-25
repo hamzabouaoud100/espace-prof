@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: espace-prof
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run check
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: COOKIE_SECURE
+        value: "1"
+      - key: TEACHER_USERNAME
+        value: mbouaoud
+      - key: TEACHER_PASSWORD
+        sync: false
