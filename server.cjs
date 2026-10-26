@@ -144,7 +144,9 @@ const server = http.createServer(async (req, res) => {
 if (require.main === module)
   server.listen(
     Number(process.env.PORT || 4173),
-    process.env.HOST || "127.0.0.1",
+    process.env.PORT || process.env.NODE_ENV === "production"
+      ? "0.0.0.0"
+      : process.env.HOST || "127.0.0.1",
     () =>
       console.log(
         `Espace Prof: http://localhost:${server.address().port}/login.html`,
