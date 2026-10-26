@@ -117,7 +117,7 @@ const server = http.createServer(async (req, res) => {
     }
     if (req.method !== "GET" && req.method !== "HEAD")
       return send(res, 405, "Method not allowed");
-    const publicPaths = ["/login.html", "/login.js", "/style.css"];
+    const publicPaths = ["/login.html", "/login.js", "/style.css", "/favicon.svg"];
     if (!logged && !publicPaths.includes(url.pathname))
       return send(res, 302, "", { Location: "/login.html" });
     if (logged && url.pathname === "/login.html")
@@ -132,6 +132,7 @@ const server = http.createServer(async (req, res) => {
       ".html": "text/html; charset=utf-8",
       ".js": "text/javascript; charset=utf-8",
       ".css": "text/css; charset=utf-8",
+      ".svg": "image/svg+xml",
     };
     const content = await fs.readFile(target);
     send(res, 200, req.method === "HEAD" ? "" : content, {
